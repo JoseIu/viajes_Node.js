@@ -1,0 +1,432 @@
+:root {
+  --primary-font: 'Poppins', sans-serif;
+  --second-font: 'Covered By Your Grace', cursive;
+  --primary-color: #fff;
+  --second-color: #222;
+  --title-color: #d4af37;
+  --light-gray: #f4f4f4d0;
+  --error-form-bg: rgba(255, 0, 0, 0.315);
+
+  --box-shadow: 0px 0px 0.5em rgba(69, 69, 69, 0.3);
+  --box-shador-focus: 0px 0px 0.75em rgba(69, 69, 69, 0.5);
+}
+
+body {
+  position: relative;
+  font-family: var(--primary-font);
+}
+.wrapper {
+  max-width: 71.875rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  box-shadow: var(--box-shadow);
+  margin-bottom: 7em;
+  font-weight: bold;
+}
+.header--inicio {
+  position: absolute;
+  box-shadow: none;
+  background-color: transparent;
+  top: 0;
+  width: 100%;
+  color: var(--primary-color);
+}
+.header__container {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  width: 1.5em;
+}
+.header__logo-img {
+  transform: rotate(90deg);
+}
+.nav {
+}
+.nav__ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+}
+.nav__li {
+}
+.nav__link {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  transition: 0.2s ease;
+}
+.nav__link:hover {
+  color: var(--title-color);
+}
+
+.footer {
+  color: var(--primary-color);
+  background-color: var(--second-color);
+}
+.footer__container {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__logo {
+  width: 1.5em;
+}
+.footer_span {
+}
+/*=============================INICIO=============================*/
+.slider {
+  width: 100%;
+  height: 95vh;
+  margin-bottom: 3em;
+  background-image: url(/img/superior.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-gray);
+  font-size: 2.5em;
+}
+.slider__title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.slider__text {
+  padding: 0.5em;
+  font-size: clamp(2em, 8vw, 3.5em);
+  display: block;
+  color: var(--title-color);
+  font-family: var(--second-font);
+}
+/*=================NOSOTROS SECTION=================*/
+.nosotros {
+  padding: 0.5em;
+  margin-bottom: 6em;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  column-gap: 1em;
+}
+@media screen and (max-width: 45rem) {
+  .nosotros {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2em;
+  }
+}
+.nosotros__img {
+  max-width: 25em;
+}
+.nostros__content {
+  padding: 0.5em;
+}
+.nostros__title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: var(--title-color);
+}
+@media screen and (max-width: 45rem) {
+  .nostros__title {
+    text-align: center;
+  }
+}
+.nosotros__p {
+  margin-bottom: 0.7em;
+}
+
+/*Nosotros INFO CARDS*/
+.info {
+  padding: 3em 0;
+  background-color: var(--second-color);
+  color: var(--primary-color);
+  margin-bottom: 6em;
+}
+.info__container {
+  width: 100%;
+
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+  justify-content: center;
+  gap: 2em;
+}
+
+.info__card {
+  padding: 1em;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.4em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1em;
+}
+.info__card-img {
+  width: 8em;
+}
+.info__card-title {
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 1em;
+  color: var(--title-color);
+}
+.info__card-description {
+}
+/*==================DESCUENTO=====================*/
+.descuento {
+  min-height: 31.25rem;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 50%, transparent 100%), url(/img/cupon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin-bottom: 4em;
+}
+@media screen and (max-width: 47.5rem) {
+  .descuento {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 100%, transparent 100%), url(/img/cupon.jpg);
+    background-position: right;
+  }
+}
+.descuento__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  padding: 3em 2em;
+}
+.descuento__title,
+.decuento__precio {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--title-color);
+}
+.decuento__pais,
+.decuento__fecha {
+  color: var(--light-gray);
+}
+.decuento__pais {
+  font-size: 2em;
+}
+.decuento__fecha {
+  font-size: 1.3em;
+}
+/*================VIAJES PAGE/SECTION===================*/
+.viajes {
+  margin-bottom: 10em;
+}
+.viajes__title {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+.viajes__content {
+  padding: 0 0.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+@media screen and (max-width: 53.125rem) {
+  .viajes__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 34.375rem) {
+  .viajes__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* ============ VIAJES=========*/
+.travel {
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+.travel__img {
+}
+.travel__body {
+  padding: 1em 2em 2.2em 2em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.4em;
+}
+.travel__title {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 1.5em;
+}
+.travel__date,
+.travel__available {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+.travel__icon {
+  width: 1.4em;
+}
+.travel__btn {
+  background-color: var(--second-color);
+  color: var(--primary-color);
+  border-radius: 0.4em;
+  padding: 0.7em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.86em;
+}
+/*============VIAAJES INFO=========*/
+.viaje-info {
+  padding: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+.viaje-info__img {
+  max-height: 45em;
+}
+@media screen and (max-width: 53.125rem) {
+  .viaje-info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .viaje-info__img {
+    max-height: 25em;
+  }
+}
+.viaje-info__title {
+  font-size: 2.5em;
+  margin-bottom: 2em;
+  font-weight: bold;
+  color: var(--title-color);
+}
+.viaje-info__body {
+  padding: 0.5em;
+}
+
+/* ============ TESTIMONIOS=========*/
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 2.5em;
+  font-weight: bold;
+}
+.form {
+  padding: 0.5em;
+  margin-bottom: 10em;
+}
+.form__form {
+  outline: 0.0625rem solid var(--light-gray);
+  border-radius: 0.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+}
+.form__label {
+  margin-bottom: 0.7em;
+  font-size: 1.2em;
+  padding-left: 0.3em;
+}
+.form__input,
+.form__area {
+  width: 100%;
+  padding: 0.5em;
+  outline: none;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.4em;
+}
+.form__area:focus,
+.form__input:focus {
+  box-shadow: var(--box-shador-focus);
+}
+.form__btn {
+  display: inline-block;
+  width: 25em;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.7em;
+  border-radius: 0.4em;
+  background-color: var(--second-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/*======ERRORES DEL FORM======*/
+.errores {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+.error {
+  background-color: var(--error-form-bg);
+  color: var(--primary-color);
+  padding: 0.3em;
+  font-weight: bold;
+}
+
+/*==========TESTIMONIOS==========*/
+.testimonios {
+  padding: 0.5em;
+  margin-bottom: 5em;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+@media screen and (max-width: 970px) {
+  .testimonios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 43.75rem) {
+  .testimonios {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.title {
+  color: var(--title-color);
+}
+.testimonios__quote {
+  padding: 1.5625rem;
+  background-color: var(--light-gray);
+  border: 0.0625rem solid var(--second-color);
+  border-radius: 0.4em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonios__quote::before {
+  content: '\201c';
+  font-size: 6.25rem;
+  display: block;
+  margin-top: 1.25rem;
+}
+.testimonios__quote--bordered {
+  border-left-width: 0.9375rem;
+}
+.testimonios__mensaje {
+  margin-bottom: 0.5em;
+}
+.testimonios__footer {
+  text-align: right;
+}
+.testimonios__credit {
+  font-weight: bold;
+}
+.testimonios__credit::before {
+  content: '\2014\0020';
+}

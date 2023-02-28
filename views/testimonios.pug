@@ -1,0 +1,32 @@
+extends ./layout/index
+
+block content 
+    main 
+        h1.title #{pagina}
+        section.testimonios.wrapper
+            each testimonial in testimoniales
+                
+                blockquote.testimonios__quote.testimonios__quote--bordered
+                    p.testimonios__mensaje #{testimonial.mensaje}
+                    footer.testimonios__footer
+                        p.testimonios__credit #{testimonial.nombre}
+
+            //- p= JSON.stringify(testimoniales)
+        if(errores)
+            .errores.wrapper
+                each error in errores 
+                    span.error #{error.mensaje}
+
+        section.form.wrapper 
+            form.form__form(action="", method="POST")
+                .form__group
+                    label.form__label(for="nombre") Nombre
+                    input#nombre(class="form__input" type="text", name="nombre" placeholder="Nombre....", value= nombre) 
+                .testimonios__form-group
+                    label.form__label(for="email") Correo
+                    input#email(class="form__input" type="email", name="email" placeholder="Correo....", value= email)
+                .testimonios__form-group
+                    label.form__label(for="mensaje") Mensaje
+                    textarea#mesanje(class="form__area" name="mensaje", cols="30", rows="10")= mensaje 
+
+                input.form__btn(type="submit", value="Enviar")

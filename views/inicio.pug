@@ -1,0 +1,65 @@
+extends ./layout/index
+
+block slider
+    .slider
+        div
+            em.slider__text Avetura
+            h1.slider__title Rio de Janeiro
+
+block content 
+    main 
+        section.nosotros.wrapper 
+            .nostros__content 
+                h1.nostros__title  Sobre Notros
+                p.nosotros__p En nuestra agencia de viajes, nos apasiona el mundo del turismo y la aventura. Nos encanta descubrir nuevos lugares y culturas, y nos encanta compartir esa pasión con nuestros clientes.
+                p.nosotros__p Nuestra agencia se fundó con la idea de ayudar a las personas a cumplir sus sueños de viajar. Ya sea que estés buscando unas vacaciones relajantes en una playa exótica o una emocionante expedición de senderismo, nuestro equipo de expertos en viajes está aquí para ayudarte a encontrar la experiencia perfecta para ti.
+                p.nosotros__p Nos enorgullece ofrecer una amplia variedad de destinos en todo el mundo, desde los lugares más populares hasta los más remotos y menos conocidos. Trabajamos con los mejores proveedores de servicios de viajes y siempre nos aseguramos de brindarte los mejores precios y ofertas.
+
+
+            .nosotros__img 
+                img(src="img/inicio_nosotros.jpg", alt="torre eiffel francia")
+
+        section.viajes.wrapper 
+            h2.viajes__title Viajes
+            .viajes__content
+                each travel in travels
+                    article.travel
+                        img.travel__img(src=`img/destinos_${travel.imagen}.jpg`, alt=`${travel.imagen}`)
+                        .travel__body
+                            h2.travel__title #{travel.titulo}
+                            p.travel__date
+                                svg.travel__icon(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                    path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                                    path(d='M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4')
+                                    path(d='M18 14v4h4')
+                                    circle(cx='18' cy='18' r='4')
+                                    path(d='M15 3v4')
+                                    path(d='M7 3v4')
+                                    path(d='M3 11h16')
+
+
+                                | #{travel.fecha_ida} - #{travel.fecha_vuelta}
+                            p.travel__available
+                                svg.travel__icon(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                    path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                                    circle(cx='9' cy='7' r='4')
+                                    path(d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+                                    path(d='M16 3.13a4 4 0 0 1 0 7.75')
+                                    path(d='M21 21v-2a4 4 0 0 0 -3 -3.85')
+                                | #{travel.disponibles}
+
+                            a.travel__btn(href=`viajes/${travel.slug}`) Más información 
+        section.descuento
+            .descuento__content.wrapper
+                h2.descuento__title 5% de descuento
+                p.decuento__pais Viaje a Canada
+                p.decuento__fecha 20 de marzo del 2023 - 28 de abril 2023
+                p.decuento__precio 1500€
+        section.wrapper
+            h1.title Testimonios
+            .testimonios
+                each testimonial in testimoniales
+                 blockquote.testimonios__quote.testimonios__quote--bordered
+                        p.testimonios__mensaje #{testimonial.mensaje}
+                        footer.testimonios__footer
+                            p.testimonios__credit #{testimonial.nombre}

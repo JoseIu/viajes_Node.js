@@ -1,0 +1,36 @@
+extends ./layout/index
+
+block content 
+    main 
+        section.viajes.wrapper 
+            h1.viajes__title #{pagina}
+            .viajes__content
+                each travel in travels
+                    article.travel
+                        img.travel__img(src=`img/destinos_${travel.imagen}.jpg`, alt=`${travel.imagen}`)
+                        .travel__body
+                            h2.travel__title #{travel.titulo}
+                            p.travel__date
+                                svg.travel__icon(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                    path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                                    path(d='M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4')
+                                    path(d='M18 14v4h4')
+                                    circle(cx='18' cy='18' r='4')
+                                    path(d='M15 3v4')
+                                    path(d='M7 3v4')
+                                    path(d='M3 11h16')
+
+
+                                | #{travel.fecha_ida} - #{travel.fecha_vuelta}
+                            p.travel__available
+                                svg.travel__icon(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                    path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                                    circle(cx='9' cy='7' r='4')
+                                    path(d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+                                    path(d='M16 3.13a4 4 0 0 1 0 7.75')
+                                    path(d='M21 21v-2a4 4 0 0 0 -3 -3.85')
+                                | #{travel.disponibles}
+
+                            a.travel__btn(href=`viajes/${travel.slug}`) Más información 
+
+                
