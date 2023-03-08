@@ -65,6 +65,8 @@ body {
 }
 
 .footer {
+  position: static;
+  bottom: 0;
   color: var(--primary-color);
   background-color: var(--second-color);
 }
@@ -288,6 +290,7 @@ body {
 }
 /*============VIAAJES INFO=========*/
 .viaje-info {
+  height: 100vh;
   padding: 0.5em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
